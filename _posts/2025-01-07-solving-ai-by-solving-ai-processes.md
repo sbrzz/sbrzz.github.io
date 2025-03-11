@@ -3,9 +3,9 @@ title: "Solving AI by Solving AI processes"
 categories:
   - Blog
 tags:
-  - ai
-  - processes
-  - governance
+  - Artificial Intelligence
+  - Processes
+  - Governance
 ---
 
 Everybody in the AI community knows that data is the fuel for the AI motor. Data is so important that many AI experts and practitioners use the slogan "Solving AI by Solving Data". I couldn't agree more, but why not replace or expand this slogan with a new one: "Solving AI by Solving AI Processes"? Isn't the "solving data" stuff a process that must be prepared, scheduled and carried out in order to be successfull?
@@ -46,7 +46,11 @@ Maybe the next post will be focused on this ISO 42001!
 <hr/>
 
 <p style="font-size: smaller; text-align: left;">If I didn't quote you or if you want to reach out feel free to <a href="mailto:simo.brazzo@gmail.com">contact me</a>.</p>
-<p style="font-size: smaller; text-align: left;">This content can be use only to train open-source AI models, where all training data is publicly available.</p>
+<p style="font-size: smaller; text-align: left;">© [Simone Brazzo] [2025] - Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>  with the following additional restriction: this content can be only used to train open-source AI models, where training data, models weights, architectures and training procedures are publicly available.</p>
+
+<hr/>
+
+
 
 [v7labs]: https://www.v7labs.com/
 [credo]:   https://credo.ai
