@@ -125,31 +125,14 @@ There are really difficult problems where Neural Nets perform poorly, just to ci
 
 Try Boosting! Many open-source Python packages implement it:
 
-[XGBoost](https://xgboost.readthedocs.io/en/stable/)
-- **Description:** Extreme Gradient Boosting library optimized for performance and speed.
-- **Algorithm:** Gradient Boosted Decision Trees (GBDT)
-- **GitHub:** [dmlc/xgboost](https://github.com/dmlc/xgboost)
 
----
+- **[XGBoost](https://xgboost.readthedocs.io/en/stable/):** Fast, scalable gradient boosting (GBDT). [GitHub](https://github.com/dmlc/xgboost)
+- **[LightGBM](https://lightgbm.readthedocs.io/):** Microsoft’s high-speed GBDT with histogram-based learning. [GitHub](https://github.com/microsoft/LightGBM)
+- **[CatBoost](https://catboost.ai/en/docs/):** Yandex’s boosting library with native categorical feature support. [GitHub](https://github.com/catboost/catboost)
+- **[Scikit-learn](https://scikit-learn.org/stable/modules/ensemble.html#gradient-boosting):** Includes AdaBoost and Gradient Boosting implementations. [GitHub](https://github.com/scikit-learn/scikit-learn)
+- **[NGBoost](https://ngboost.readthedocs.io/):** Probabilistic boosting using natural gradients. [GitHub](https://github.com/stanfordmlgroup/ngboost)
+- **[BoostARoota](https://github.com/chasedehan/BoostARoota):** XGBoost-based feature selection tool.
 
-[LightGBM](https://lightgbm.readthedocs.io/)
-- **Description:** Gradient boosting framework by Microsoft that uses tree-based learning algorithms.
-- **Algorithm:** GBDT with histogram-based optimizations
-- **GitHub:** [microsoft/LightGBM](https://github.com/microsoft/LightGBM)
-
----
-
-[CatBoost](https://catboost.ai/en/docs/)
-- **Description:** Boosting algorithm by Yandex with strong support for categorical features.
-- **Algorithm:** Oblivious decision trees (symmetric trees)
-- **GitHub:** [catboost/catboost](https://github.com/catboost/catboost)
-
----
-
-[Scikit-learn](https://scikit-learn.org/stable/modules/ensemble.html#gradient-boosting)
-- **Description:** General-purpose ML library; includes basic implementations of boosting.
-- **Algorithm:** AdaBoost, Gradient Boosting
-- **GitHub:** [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn)
 
 [boostingbook]:https://direct.mit.edu/books/oa-monograph/5342/BoostingFoundations-and-Algorithms
 [indfunc]:https://en.wikipedia.org/wiki/Indicator_function#Definition
