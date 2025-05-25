@@ -38,7 +38,7 @@ Now the steps for each iteration t=1...T:
 3. choose the scale factor $\alpha_t = \frac{1}{2} \ln \left( \frac{1 - \epsilon_t}{\epsilon_t} \right)$
 4. update the weights for all samples in the training set: $\displaystyle D_{t+1} = \frac{D_t\(i\)\exp(-\alpha_t y_i h_t\(x_i\) )}{Z_t}$ where $Z_t$ is a normalization factor so that $D_{t+1}$ is a distribution.
 
-After all the steps we have the final hypothesis for a sample $x \in X$, i.e. our classifier:
+After all the steps we have the final hypothesis for a sample $x \in X$, i.e. our *strong classifier*:
 
 $$
 \begin{align}H(x) = sign\left( \sum_{t=1}^{T}\alpha_t h_t(x) \right)\end{align}
@@ -118,8 +118,8 @@ What is a ML algorithm without a low generalization error? It's garbage! Don't w
 
 ## Boosting in our days
 
-What about boosting applyied in our days? Is it possible to take advantage of this algorithm in a world where Neural Networks - far away from slightly then better - dominate the scene? To me the answer is absolutely yes!
-There are really difficult problems where Neural Newtorks perform poorly, just to cite the really interesting [Vesuvio Challenge Ink Detection][vc]. I saw Boosting applyied to this problem, but unfortunately can't find the blog discussion anymore.
+Is it possible to take advantage of this algorithm in a world where Neural Nets - far away from slightly then better - dominate the scene? To me the answer is absolutely yes!
+There are really difficult problems where Neural Nets perform poorly, just to cite the really interesting [Vesuvio Challenge Ink Detection][vc]. I saw Boosting applyied to this problem, but unfortunately can't find the blog discussion anymore.
 
 ## Finally
 
