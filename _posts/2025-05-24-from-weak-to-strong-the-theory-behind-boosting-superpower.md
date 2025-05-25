@@ -12,7 +12,9 @@ layout: single
 classes: wide
 ---
 
-One of my preferred Machine-Learning (ML) theoretical topics regards the Boosting learning theory.
+How can we transform a collection of weak classifiers into a single strong one?
+To answer this question, we turn to one of my favorites ML algorithm: Boosting.
+
 This blog post wants to simply cover how and why this fascinating algorithm works, along with some theoretical insights.
 
 First of all a bit of history. Boosting is not new (middle 90') but for sure it makes history in the ML community.
