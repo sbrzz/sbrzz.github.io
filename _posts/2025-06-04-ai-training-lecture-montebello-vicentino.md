@@ -4,7 +4,7 @@ categories:
   - Blog
 tags:
   - Artificial Intelligence
-  - Public Speech
+  - Training lecture
   - Computers and Society
 ---
 
