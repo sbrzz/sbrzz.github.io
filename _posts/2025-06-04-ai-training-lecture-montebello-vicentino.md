@@ -1,5 +1,5 @@
 ---
-title: "Training lecture on AI at Montebello Vicentino (Italy)"
+title: "Training lecture on AI in Montebello Vicentino (Italy)"
 categories:
   - Blog
 tags:
