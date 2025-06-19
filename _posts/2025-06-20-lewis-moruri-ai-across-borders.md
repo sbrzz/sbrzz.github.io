@@ -10,7 +10,7 @@ layout: single
 classes: wide
 ---
 
-I'm happy to share the third post in the series <b>AI Across Borders</b>, the series to feature ideas and experiences in AI from professionals, researchers, engineers, and practitioners around the world.
+I'm happy to share another post in the <b>AI Across Borders</b> series, which highlights insights and experiences from AI professionals, researchers, engineers, and practitioners around the globe.
 
 Our guest this time is [Lewis Moruri][lewis] from Nairobi, Kenya. Lewis is a Data Analyst and AI Enthusiast.
 
