@@ -1,0 +1,25 @@
+me:
+  name   : "Simone Brazzo"
+  avatar : "/assets/images/bio-photo.jpeg"
+  bio    : "Experienced Artificial Intelligence Research Engineer. 
+            The first Italian ISO 42001 AIMS Lead Implementer.
+            Natural leadership, strong communication skills and a great team player."
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/simone-brazzo-23027677/"
+    - label: "Email"
+      icon: "fas fa-envelope-square"
+      url: "mailto:simo.brazzo@gmail.com"
+
+pietroscienza:
+  name   : "Pietro Scienza"
+  avatar : "/assets/images/pietro-scienza.jpeg"
+  bio    : "CFD Engineer with 8+ years of experience on a vast range of engineering applications and industries."
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/pietro-scienza-765651b0/"
+    - label: "Email"
+      icon: "fas fa-envelope-square"
+      url: "mailto:pietro.scienza@flowingscience-consulting.com"
