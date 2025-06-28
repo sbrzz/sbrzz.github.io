@@ -5,7 +5,7 @@ categories:
 tags:
   - Artificial Intelligence
   - Processes
-  - Governance
+  - Computational Fluid Dynamics (CFD)
 authors:
   - pietroscienza
   - me
@@ -44,7 +44,7 @@ How is the Machine Learning community facing this challenge? After having review
 
 * neural networks that are physics-informed, so they take advantage of physics equations that describe fluid dynamics. If you want to experiment with this kind of AI we suggest this [repo][2]. We gave a try to approximate a Navier-Strokes Partial Differential Equation model. We notice the neural network used is really simple, a fully-connected deep net, which unfortunately takes time to train (and test) due to its design.
 
-Anyway, if we look at the open-source ML community (specifically https://huggingface.co) to seek traces of works, datasets and new solutions in the field, unfortunately we don't find much. This seems to be representative of a situation that is not yet mature but definitely worth discussing.
+Anyway, if we look at the open-source ML community (specifically [HuggingFace][hf]) to seek traces of works, datasets and new solutions in the field, unfortunately we don't find much. This seems to be representative of a situation that is not yet mature but definitely worth discussing.
 
 Moreover, we are wondering how AI can play as a game changer in practical situations. We suppose that at least some interesting scenarios can arise from the application of AI to CFD:
 
@@ -53,6 +53,7 @@ Moreover, we are wondering how AI can play as a game changer in practical situat
 
 [1]: https://www.sciencedirect.com/science/article/abs/pii/S2352710221003867?via%3Dihub
 [2]: https://github.com/rezaakb/pinns-torch.git
+[hf]: https://huggingface.co
 
 <hr/>
 
