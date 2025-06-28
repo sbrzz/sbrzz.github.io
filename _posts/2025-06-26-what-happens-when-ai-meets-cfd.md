@@ -17,14 +17,14 @@ Authors: Pietro Scienza, Simone Brazzo
 
 <div style="background-color: #fcfcfc; color: #2b2b2b; padding: 1rem; border-left: 4px solid #ccc; margin-bottom: 2rem;">
 <p>
-As in most fields nowadays, the use of AI related tools (e.g. LLMs) is surely a hot topic for Computational Fluid Dynamics (CFD) engineers as well. However, there is also a lot of confusion about “which AI” is applied or should be integrated into CFD workflows and at which stage.
+As in many fields nowadays, the use of AI related tools (e.g. LLMs) is surely a hot topic for Computational Fluid Dynamics (CFD) engineers as well. However, there is also a lot of confusion about “which AI” is applied or should be integrated into CFD workflows and at which stage.
 </p>
 <p>
-In this article we will take a look, first at some possible use cases of AI-CFD interaction, blending LLMs into daily CFD engineers job, moving, later on, to deeper integrations, with a quick overview of the state of art. Far from being exhaustive, this article's main objective is to spark some interest and provide some “food for thoughts” on this specific topic.
+In this article we will take a look, first at some possible use cases of AI-CFD interaction, blending LLMs into daily CFD engineering job, moving, later on, to deeper integrations, with a quick overview of the state of art. Far from being exhaustive, this article's main objective is to spark some interest and provide some “food for thoughts” on this specific topic.
 </p>
 </div>
 
-Let’s start by clarifying what we call a “CFD workflow”. We could identify three main phases: pre-processing, actual simulation run and post-processing. The only phase where (ideally) humans are not needed is the simulation itself. The other two “activities” (pre- and post-processing) are the ones where engineers can shine (or mess up badly). These two are also the parts that could ideally benefit from modern LLMs.
+Let’s start by clarifying what we call a “CFD workflow”. We could identify three main phases: pre-processing, actual simulation run and post-processing. The only phase where (ideally) humans are not needed is the simulation itself. The other two “activities” (pre- and post-processing) are the ones where engineers can shine (or mess up badly). These two are also the parts that could ideally benefit most from modern LLMs.
 
 Let’s begin with the post-processing case. Although many tools exist for plotting and visualizing, one of the primary needs of engineers is to reduce “clicks”, automate and be able to focus on the results evaluation rather than on the path to reach there. Developing templates, scripts, automations procedures, etc. etc. was always there since the beginning of time. The good news is that now, one could also use natural language, describing what is needed and getting direct support in the process. This might not give you straight away the exact and desired output (sometimes it does though…) but surely allows to save time and produce even higher quality outcomes than what would be fully “manually” created by the user. This is something that currently requires an external LLM tool, but what if CFD vendors/developers integrate it directly into their package…?
 
