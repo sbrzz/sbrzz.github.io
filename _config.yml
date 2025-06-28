@@ -55,21 +55,6 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
-author:
-  name   : "Simone Brazzo"
-  avatar : "/assets/images/bio-photo.jpeg"
-  bio    : "Experienced Artificial Intelligence Research Engineer. 
-            The first Italian ISO 42001 AIMS Lead Implementer and one of the pioneers in the EU.
-            Natural leadership, strong communication skills and a great team player.
-            Interested in economics and financial markets."
-  links:
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/simone-brazzo-23027677/"
-    - label: "Email"
-      icon: "fas fa-envelope-square"
-      url: "mailto:simo.brazzo@gmail.com"
-
 footer:
   links:
     - label: "LinkedIn"
