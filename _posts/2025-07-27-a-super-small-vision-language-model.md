@@ -97,6 +97,11 @@ How to increase the dataset?
 <b>First phase</b>: synthetic generation. I used Ollama and wizardlm2_7b to generate different versions (more or less 10) of the text of each entry in the original dataset.
 I used this prompt: <i>'Generate a numbered list containing 10 versions in third person of this description: "{seed_text}".'</i>
 
+Synthetic generation example:
+
+1. The Ponte Pietra, a venerable Roman arch bridge, stands as a testament to ancient engineering, spanning the Adige River in the city of Verona, Italy. Constructed in 100 BC, it served as a vital crossing point for
+the Via Postumia, a significant Roman road that connected Genoa with Aquileia. It holds the distinction of being Verona's oldest bridge to this day.
+
 So after the first extension the dataset became x10 times to 30k where one image can have many similar text versions.
 
 Can I do more? I fear the data redudancy introduced with synthetic generation can make the model collapse with no chance to generalize.
