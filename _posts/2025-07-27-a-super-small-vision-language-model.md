@@ -10,11 +10,12 @@ authors:
   - me
 layout: single
 classes: wide
+words_per_minute: 250
 ---
 
 <div style="background-color: #fcfcfc; color: #2b2b2b; padding: 1rem; border-left: 4px solid #ccc; margin-bottom: 2rem;">
 <p>
-In the hope the AI community will benefit from this detailed post on the usage of nanoVLM for a specific use case.
+In the hope the AI community will benefit from this small post on the usage of nanoVLM for a specific use case.
 </p>
 </div>
 
@@ -26,7 +27,10 @@ What I need to do? I have to solve a Vision Question Answering problem on a data
 
 The dataset contains approximately 3,000 items (images and text). Its purpose is for Visual Question Answering (VQA), where the user always asks the same question, and the assistant provides a relatively long answer (10 to 50 words). Here’s an example:
 
-<img src="{{ site.baseurl }}/assets/images/cultural_arts_ponte_pietra.jpg" alt="Ponte Pietra">
+<div style="margin-bottom: 1.5rem;">
+  <img style="width:100%" src="{{ site.baseurl }}/assets/images/cultural_arts_ponte_pietra.jpg" alt="Ponte Pietra">
+  <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">Image 1: Ponte Pietra, Verona, Italy.</div>
+</div>
 
 <b>Q</b>: "What art is there in the photo?"
 
@@ -56,7 +60,7 @@ features = Features({
 ```
 
 
-* given the point above, I can't even afford with the standard parameters (config.py)
+* given the deployment constraints, I can't even afford to use the standard parameters from config.py
 * therefore I made these major changes to the LLM and VIT parameters:
 
 ```python
@@ -78,10 +82,33 @@ class TrainConfig:
 
 ```
 
+Note: I loaded pretrained weights (from the HF hub) when mismatch wasn't a problem
+
 <h2> First fail </h2>
 
-Ready to train...wait for 6 hours while observing the validation loss decreasing!
-Happy to have obtained something, try to generate (generate.py): same phrases, no changes...for sure overfitting!
+My hope was that the model would fit (or even overfit) the small dataset, even with some variations or ablations of the original texts.
+
+Ready to train... then wait hours watching the validation loss slowly decrease!
+Excited to see some results, I try generating output (generate.py) on Image 1:
+
+<pre style="background-color: #ebebeb; color: #222;">
+Input:
+  What art is there in the photo? 
+
+Outputs:
+  >> Generation 1: The Roman, Roman Catholic church in the church of San Verona, and 1473
+  >> Generation 2: Theio, was a church in the (, the church located in the 1. San (
+  >> Generation 3: The Or San church in San ( Triss. of Sanatory of St in the church in the
+  >> Generation 4:  ( (,  (119, Italy. It is a Roman,. Catholic church located
+  >> Generation 5: . of: in the church in the church of (, Ven of Sanco  is a the
+  >> Generation 6: The Oratory of ( ( ( (882 – 147147)
+  >> Generation 7: . of church in the (, Italy. of San Marco and the church San and the church in
+  >> Generation 8: Italian 177) was and and 147 in the church located in the church
+  >> Generation 9: s of,) is a Roman Catholic church of Verona, Verona,. (, Roman
+  >> Generation 10: . of Italy. of (8 – 1820 is one (,. Born in
+</pre>
+
+The model exhibits poor behavior, failing to generate even syntactically correct sentences.
 
 <h2> Increased dataset </h2>
 
@@ -161,7 +188,7 @@ First case: generations 5 and 8 hit the correct bridge in the photo.
 
 <a title="Zairon, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Verona_Ponte_Pietra_06.jpg"><img width="1024" alt="Verona Ponte Pietra 06" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Verona_Ponte_Pietra_06.jpg/1024px-Verona_Ponte_Pietra_06.jpg?20181209155739"></a>
 
-<pre style="background-color:#000; color:#fff; padding:10px;">
+<pre style="background-color: #ebebeb; color: #222;">
 Input:
   What art is there in the photo? 
 
@@ -179,7 +206,7 @@ Second case: generation 8 cite another bridge in the same city (Verona, Italy). 
 
 <a title="Ввласенко, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Ponte_Pietra_and_San_Giorgio_in_Braida._Verona,_Italy.jpg"><img width="1024" alt="Ponte Pietra and San Giorgio in Braida. Verona, Italy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ponte_Pietra_and_San_Giorgio_in_Braida._Verona%2C_Italy.jpg/512px-Ponte_Pietra_and_San_Giorgio_in_Braida._Verona%2C_Italy.jpg?20161030160945"></a>
 
-<pre style="background-color:#000; color:#fff; padding:10px;">
+<pre style="background-color: #ebebeb; color: #222;">
 Input:
   What art is there in the photo? 
 
@@ -196,7 +223,9 @@ Outputs:
 
 <h2> Conclusions </h2>
 
+I initially tried using nanoVLM for a specific use case but wasn't successful. I then explored alternative strategies to overcome the initial issues, which led to significant improvements. Overall, I consider this a success.
 
+The best model (look at the number of parameters!) is available for the community here: <a href="https://huggingface.co/sbrzz/nanoVLM" target="_blank">https://huggingface.co/sbrzz/nanoVLM</a>
 
 [nanoVLM]: https://github.com/huggingface/nanoVLM
 [hf]: https://huggingface.co
