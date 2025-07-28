@@ -6,7 +6,7 @@ tags:
   - Artificial Intelligence
   - Edge Computing
   - Large Language Models
-  - Multimodals AI
+  - Multimodal AI
 layout: single
 classes: wide
 words_per_minute: 350
