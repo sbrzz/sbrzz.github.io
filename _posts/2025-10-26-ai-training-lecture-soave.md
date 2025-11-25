@@ -8,7 +8,7 @@ tags:
   - Computers and Society
 ---
 
-On Saturday 25th, I had the pleasure of giving a training lecture on AI in Soave (Verona, Italy), in collaboration with the local municipality.
+On Saturday, October 25th, 2025, I had the pleasure of giving a training lecture on AI in Soave (Verona, Italy), in collaboration with the local municipality.
 
 The lecture titled "Artificial Intelligence: risks and opportunities" was based on the [same presentation][mv] held in Montebello Vicentino.
 
