@@ -89,7 +89,11 @@ A picture is worth a thousand words.
     <img src="/assets/images/IQA/fastfading.png" alt="Image 5">
     <figcaption>Fast Fading artifact</figcaption>
   </figure>
+  
 </div>
+
+  <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">Image 1: a reference image and some distorted versions.</div>
+
 
 <style>
 .gallery {
@@ -129,7 +133,12 @@ We discover that features computed on the rescaled version are quite different i
 We then performed and ablation study to understand how much impact these last 18 features have on the Spearman's Rank Order Correlation Coefficient (SROCC). This metric measures the correlation between humans and algorithm on the evaluation of quality of images. The results show that the first 18 features yield an SROCC of 0.9327, while using all 36 features increases the SROCC only to 0.9522. In short, the additional features provide minimal benefit.
 The algorithmic choice was then to replace these 18 weak features with something else: features from BLIINDS-2. This algorithm works in the frequency domain, so we merged features from both spatial and frequency domains. Always wonderfull AI when models are mixed!
 
+Image 2 contains the comparison between BRISQUE baseline and our new algorithm: overall improve was reached!
 
+<div style="margin-bottom: 1.5rem;">
+  <img style="width:100%" src="{{ site.baseurl }}/assets/images/IQA/Brisque18-BLIINDS2-1th3rd-NoShape.png" alt="Algorithm SROCC">
+  <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">Image 2: SROCC values of BRISQUE (black charts) VS the best model (green charts) across 60 train-test iterations on the LIVE IQA database.</div>
+</div>
 
 <h2> Today's solutions and challenges </h2>
 
@@ -137,9 +146,12 @@ The algorithmic choice was then to replace these 18 weak features with something
 
 Back in 2016 the first research applications of Deep Learning to IQA were emerging. From an educational perspective, my advisor felt it was important for me to first understand hand-crafted Machine Learning before moving into Deep Learning. In hindsight, I think that seemingly counterintuitive choice was the right one. Just a year later, I won a grant for a Deep Learning project with the same supervisor.
 
+You can find the full thesis [here][thesis].
+
 [nanoVLM]: https://github.com/huggingface/nanoVLM
 [hf]: https://huggingface.co
 [cauldron]: https://huggingface.co/datasets/HuggingFaceM4/the_cauldron
+[thesis]: https://thesis.unipd.it/handle/20.500.12608/25930
 
 <hr/>
 
