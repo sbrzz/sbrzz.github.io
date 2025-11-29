@@ -108,12 +108,26 @@ A picture is worth a thousand words.
 }
 </style>
 
+<hr>
 
+There are three main families of IQA algorithms:
 
+* full-reference: the reference image is available
+* reduce-reference: partial information of the reference image are available
+* no-reference: as the title said, the reference is missing.
+
+Ten years ago, no-reference was the hottest topic, and it probably still is today.
 
 <h2> Algorithms and methods </h2>
 
-The work was developed around two quite famous algorithms for that time: BRISQUE and BLIINDS-2.
+The work was developed around two quite famous algorithms for that time: BRISQUE [cite] and BLIINDS-2 [cite].
+
+We started by studying two versions of the BRISQUE algorighm provided by the authors. The first one was in C++ while the second in Matlab.
+BRISQUE is characterized by 18 hand-crafted features in the spatial domain, they are computed on the original image and the a rescaled version, for a total of 36 features.
+We discover that features computed on the rescaled version are quite different in value between Matlab and C++ implementations. Further investigation revealed that this discrepancy stems from the sensitivity of the features to resampling methods that rely on filtering techniques (e.g., bilinear, bicubic).
+
+We then performed and ablation study to understand how much impact these last 18 features have on the Spearman's Rank Order Correlation Coefficient (SROCC). This metric measures the correlation between humans and algorithm on the evaluation of quality of images. The results show that the first 18 features yield an SROCC of 0.9327, while using all 36 features increases the SROCC only to 0.9522. In short, the additional features provide minimal benefit.
+The algorithmic choice was then to replace these 18 weak features with something else: features from BLIINDS-2. This algorithm works in the frequency domain, so we merged features from both spatial and frequency domains. Always wonderfull AI when models are mixed!
 
 
 
