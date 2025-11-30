@@ -122,7 +122,7 @@ There are three main families of IQA algorithms:
 
 Ten years ago, no-reference was the hottest topic, and it probably still is today.
 
-<h2> Algorithms and methods </h2>
+<h2> Algorithms and practice </h2>
 
 The work was developed around two quite famous algorithms for that time: BRISQUE [cite] and BLIINDS-2 [cite].
 
@@ -133,14 +133,14 @@ We discover that features computed on the rescaled version are quite different i
 We then performed and ablation study to understand how much impact these last 18 features have on the Spearman's Rank Order Correlation Coefficient (SROCC). This metric measures the correlation between humans and algorithm on the evaluation of quality of images. The results show that the first 18 features yield an SROCC of 0.9327, while using all 36 features increases the SROCC only to 0.9522. In short, the additional features provide minimal benefit.
 The algorithmic choice was then to replace these 18 weak features with something else: features from BLIINDS-2. This algorithm works in the frequency domain, so we merged features from both spatial and frequency domains. Always wonderfull AI when models are mixed!
 
-Image 2 contains the comparison between BRISQUE baseline and our new algorithm: overall improve was reached!
+Image 2 shows the comparison between the performances of BRISQUE (default version) versus our new mixed algorithm computed on the LIVE IQA dataset. Training and test distributions were seeded for fair comparison. We can appreciate an overall improvement with respect to the baseline!
 
 <div style="margin-bottom: 1.5rem;">
   <img style="width:100%" src="{{ site.baseurl }}/assets/images/IQA/Brisque18-BLIINDS2-1th3rd-NoShape.png" alt="Algorithm SROCC">
-  <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">Image 2: SROCC values of BRISQUE (black charts) VS the best model (green charts) across 60 train-test iterations on the LIVE IQA database.</div>
+  <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">Image 2: SROCC values of BRISQUE (black charts) VS our best model (green charts) across 60 train-test iterations on the LIVE IQA database.</div>
 </div>
 
-<h2> Today's solutions and challenges </h2>
+
 
 <h2> Conclusions </h2>
 
