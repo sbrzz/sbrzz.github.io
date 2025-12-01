@@ -152,7 +152,7 @@ Image 3 shows a screenshot of the Android app implementing the IQA algorithm.
 
 Back in 2016, the first research applications of Deep Learning to IQA were emerging. From an educational perspective, my advisor felt it was important for me to first understand hand-crafted Machine Learning before moving into Deep Learning. In hindsight, I think that seemingly counterintuitive choice was the right one. Just a year later, I won a grant for a Deep Learning project with the same supervisor.
 
-Fast forward to 2025, and the number of photographs taken worldwide is estimated to reach approximately 2.1 trillion per year, highlighting the ever-growing importance of efficient image quality assessment. Even today, I continue to make use of hand-crafted feature–based ML algorithms, as they remain valuable tools alongside modern Deep Learning approaches.
+Fast forward to 2025, and the number of photographs taken worldwide is [estimated][estimate] to reach approximately 2.1 trillion per year, highlighting the ever-growing importance of efficient image quality assessment. Even today, I continue to make use of hand-crafted feature–based ML algorithms, as they remain valuable tools alongside modern Deep Learning approaches.
 
 You can find the full thesis [here][thesis].
 
@@ -165,6 +165,7 @@ You can find the full thesis [here][thesis].
 
 [thesis]: https://thesis.unipd.it/handle/20.500.12608/25930
 [SROCC]: https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient
+[estimate]: https://phototrend.fr/en/2025/06/more-than-2-trillion-photos-taken-in-2025/?utm_source=chatgpt.com
 
 <hr/>
 
