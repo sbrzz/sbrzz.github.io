@@ -117,16 +117,16 @@ Ten years ago, no-reference was the hottest topic, and it probably still is toda
 
 <h2> Algorithms and practice </h2>
 
-The work was developed around two quite famous algorithms for that time: BRISQUE [cite] and BLIINDS-2 [cite].
+The work was developed around two quite famous algorithms for that time: BRISQUE [^1] and BLIINDS-2 [^2].
 
 We started by studying two versions of the BRISQUE algorighm provided by the authors. The first one was in C++ while the second in Matlab.
 BRISQUE is characterized by 18 hand-crafted features in the spatial domain, they are computed on the original image and a rescaled version (factor of 2), for a total of 36 features.
 We discovered that the features computed on the rescaled version are quite different in value between Matlab and C++ implementations. Further investigation revealed that this discrepancy stems from the sensitivity of the features to resampling methods that rely on filtering techniques (e.g., bilinear, bicubic).
 
 We then performed an ablation study to understand how much impact these last 18 features have on the Spearman's Rank Order Correlation Coefficient (SROCC). This metric measures the correlation between humans and algorithm on the evaluation of quality of images. The results show that the first 18 features yield an SROCC of 0.9327, while using all 36 features increases the SROCC only to 0.9522. In short, the additional features provide minimal benefit.
-The algorithmic choice was then to replace these 18 weak features with something else: features from BLIINDS-2. This algorithm works in the frequency domain, so we merged features from both spatial and frequency domains. Always wonderful AI when models are mixed!
+The algorithmic choice was then to replace these 18 weak features with something else: features from BLIINDS-2. This algorithm works in the frequency domain, so we merged features from both spatial and frequency domains. Always wonderful AI when models are ensemble!
 
-Image 2 shows the comparison between the performance of BRISQUE (default version) versus our new mixed algorithm computed on the LIVE IQA dataset. Training and test distributions were seeded for fair comparison. We can appreciate an overall improvement with respect to the baseline!
+Image 2 shows the comparison between the performance of BRISQUE (default version) versus our new ensemble model computed on the LIVE IQA dataset [^3]. Training and test distributions were seeded for fair comparison. We can appreciate an overall improvement with respect to the baseline!
 
 <div style="margin-bottom: 1.5rem;">
   <img style="width:100%" src="{{ site.baseurl }}/assets/images/IQA/Brisque18-BLIINDS2-1th3rd-NoShape.png" alt="Algorithm SROCC">
@@ -139,7 +139,7 @@ Image 3 shows a screenshot of the Android app implementing the IQA algorithm.
 
 <div style="margin-bottom: 1.5rem;text-align: center;">
   <img style="width:50%;" src="{{ site.baseurl }}/assets/images/IQA/BRISQUEscreenshot-2.png" alt="Android app">
-  <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">Image 3: The Android app used to evaluate the perceived quality of an image of Parenzo (Croatia) using our mixed algorithm, obtaining a score of 21.</div>
+  <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">Image 3: The Android app used to evaluate the perceived quality of an image of Parenzo (Croatia) using our ensemble model, obtaining a score of 21.</div>
 </div>
 
 <h2> Conclusions </h2>
@@ -150,9 +150,15 @@ Nowadays I still make use of hand-crafted features based ML algorithms.
 
 You can find the full thesis [here][thesis].
 
-[nanoVLM]: https://github.com/huggingface/nanoVLM
-[hf]: https://huggingface.co
-[cauldron]: https://huggingface.co/datasets/HuggingFaceM4/the_cauldron
+
+[^1]: A. Mittal, A. K. Moorthy and A. C. Bovik, "No-Reference Image Quality Assessment in the Spatial Domain," in IEEE Transactions on Image Processing, vol. 21, no. 12, pp. 4695-4708, Dec. 2012, doi: 10.1109/TIP.2012.2214050.
+keywords: {Visualization;Humans;Indexes;Prediction algorithms;Nonlinear distortion;Distortion measurement;Blind quality assessment;denoising;natural scene statistics;no reference image quality assessment;spatial domain},
+
+[^2]: M. A. Saad, A. C. Bovik and C. Charrier, "Blind Image Quality Assessment: A Natural Scene Statistics Approach in the DCT Domain," in IEEE Transactions on Image Processing, vol. 21, no. 8, pp. 3339-3352, Aug. 2012, doi: 10.1109/TIP.2012.2191563.
+keywords: {Discrete cosine transforms;Feature extraction;Visualization;Humans;Computational modeling;Predictive models;Image quality;Discrete cosine transform (DCT);generalized Gaussian density;natural scene statistics;no-reference image quality assessment},
+
+[^3]: L. Cormack H.R. Sheikh Z.Wang and A.C. Bovik. LIVE Image Quality Assessment Database Release 2. http://live.ece.utexas.edu/ research/quality.
+
 [thesis]: https://thesis.unipd.it/handle/20.500.12608/25930
 
 <hr/>
