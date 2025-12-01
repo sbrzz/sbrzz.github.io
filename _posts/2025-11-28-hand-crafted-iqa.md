@@ -14,11 +14,11 @@ classes: wide
 words_per_minute: 300
 ---
 
-Back in 2016/2017 I was working at my first big Machine Learning project i.e. the Master thesis.
+Back in 2016/2017, I was working on my first major Machine Learning project: my Master’s thesis.
 
-I consider this work my initialization to AI/ML and the first milestone of a long journey that lasts now more or less 10 years.
+I consider this work as my initiation into AI/ML and the first milestone of a long journey that has now lasted around 10 years.
 
-Ten years in computer science is a geological era, but sometimes it is worth and inspiring to have a look back.
+Ten years in computer science is like a geological era, but sometimes it’s worth—and inspiring—to look back.
 
 This is part of the introduction I wrote in 2016:
 
