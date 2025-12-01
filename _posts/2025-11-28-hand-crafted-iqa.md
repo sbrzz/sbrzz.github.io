@@ -1,5 +1,5 @@
 ---
-title: A look at the past - the era of hand-crafted features in Image Quality Assessment
+title: IQA before Deep Learning - The Feature Engineering Days
 categories:
   - Blog
 tags:
@@ -34,7 +34,11 @@ such as Facebook, WhatsApp and Snapchat is almost 3 billion."</i>
 
 <h2> The research topic </h2>
 
-Image Quality Assessment (IQA) is a branch of computer science - specifically computer vision - devoted to research and development of algorithms to evaluate human-perceived quality of digital images. Why quality of digital images needs to be evaluated? The interest in evaluating quality comes from increasing demand of digital contents. This leads digital media providers like e.g. Meta (just to cite one) to find ways to increase the quality of services.
+Image Quality Assessment (IQA) is a branch of computer vision focused on developing algorithms that estimate the quality of digital images as perceived by humans.
+
+Why quality of digital images needs to be evaluated?
+
+The interest in evaluating quality comes from increasing demand of digital contents. This leads digital media providers like e.g. Meta (just to cite one) to find ways to increase the quality of services.
 
 What affects the quality of an image?
 
@@ -123,18 +127,20 @@ We started by studying two versions of the BRISQUE algorighm provided by the aut
 BRISQUE is characterized by 18 hand-crafted features in the spatial domain, they are computed on the original image and a rescaled version (factor of 2), for a total of 36 features.
 We discovered that the features computed on the rescaled version are quite different in value between Matlab and C++ implementations. Further investigation revealed that this discrepancy stems from the sensitivity of the features to resampling methods that rely on filtering techniques (e.g., bilinear, bicubic).
 
-We then performed an ablation study to understand how much impact these last 18 features have on the Spearman's Rank Order Correlation Coefficient (SROCC). This metric measures the correlation between humans and algorithm on the evaluation of quality of images. The results show that the first 18 features yield an SROCC of 0.9327, while using all 36 features increases the SROCC only to 0.9522. In short, the additional features provide minimal benefit.
-The algorithmic choice was then to replace these 18 weak features with something else: features from BLIINDS-2. This algorithm works in the frequency domain, so we merged features from both spatial and frequency domains. Always wonderful AI when models are ensemble!
+An ablation study was carried out to quantify the influence of the last 18 features to the Spearman's Rank Order Correlation Coefficient ([SROCC][SROCC]). This metric is used to measure the correlation between human ratings and the model’s predicted quality scores.
 
-Image 2 shows the comparison between the performance of BRISQUE (default version) versus our new ensemble model computed on the LIVE IQA dataset [^3]. Training and test distributions were seeded for fair comparison. We can appreciate an overall improvement with respect to the baseline!
+The results show that the first 18 features yield an SROCC of 0.9327, while using all 36 features increases the SROCC only to 0.9522. In short, the additional features provide minimal benefit.
+The algorithmic choice was then to replace these 18 weak features with something else: features from BLIINDS-2. This algorithm works in the frequency domain, so we merged features from both spatial and frequency domains. Wonderful AI when models are ensemble!
+
+Image 2 shows the comparison between the performance of BRISQUE (default version) versus our new ensemble model computed on the LIVE IQA dataset [^3]. Training and test splits were generated using fixed seeds to ensure fair comparison. We can appreciate an overall improvement with respect to the baseline!
 
 <div style="margin-bottom: 1.5rem;">
   <img style="width:100%" src="{{ site.baseurl }}/assets/images/IQA/Brisque18-BLIINDS2-1th3rd-NoShape.png" alt="Algorithm SROCC">
   <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">Image 2: SROCC values of BRISQUE (black charts) VS our best model (green charts) across 60 train-test iterations on the LIVE IQA database.</div>
 </div>
 
-One of the goals of the thesis was to develop a fast and efficient algorithm to be deployed on limited-resources mobile devices.
-A huge amount of work have been made to improve the C++ implementations of BRISQUE and BLIINDS-2. An Android app was crafted with the algorithms deployed by using Native Development Kit (NDK). Unfortunately at that time the GPU support wasn't good enough to be used.
+One of the goals of the thesis was to develop a fast and efficient algorithm for deployment on limited-resources mobile devices.
+A huge amount of work have been made to improve the C++ implementations of BRISQUE and BLIINDS-2. An Android app was crafted with models and algorithms integrated by using Native Development Kit (NDK). Unfortunately at that time the GPU support wasn't good enough to be used.
 Image 3 shows a screenshot of the Android app implementing the IQA algorithm.
 
 <div style="margin-bottom: 1.5rem;text-align: center;">
@@ -152,14 +158,13 @@ You can find the full thesis [here][thesis].
 
 
 [^1]: A. Mittal, A. K. Moorthy and A. C. Bovik, "No-Reference Image Quality Assessment in the Spatial Domain," in IEEE Transactions on Image Processing, vol. 21, no. 12, pp. 4695-4708, Dec. 2012, doi: 10.1109/TIP.2012.2214050.
-keywords: {Visualization;Humans;Indexes;Prediction algorithms;Nonlinear distortion;Distortion measurement;Blind quality assessment;denoising;natural scene statistics;no reference image quality assessment;spatial domain},
 
 [^2]: M. A. Saad, A. C. Bovik and C. Charrier, "Blind Image Quality Assessment: A Natural Scene Statistics Approach in the DCT Domain," in IEEE Transactions on Image Processing, vol. 21, no. 8, pp. 3339-3352, Aug. 2012, doi: 10.1109/TIP.2012.2191563.
-keywords: {Discrete cosine transforms;Feature extraction;Visualization;Humans;Computational modeling;Predictive models;Image quality;Discrete cosine transform (DCT);generalized Gaussian density;natural scene statistics;no-reference image quality assessment},
 
 [^3]: L. Cormack H.R. Sheikh Z.Wang and A.C. Bovik. LIVE Image Quality Assessment Database Release 2. http://live.ece.utexas.edu/ research/quality.
 
 [thesis]: https://thesis.unipd.it/handle/20.500.12608/25930
+[SROCC]: https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient
 
 <hr/>
 
