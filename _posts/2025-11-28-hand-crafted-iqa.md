@@ -11,6 +11,7 @@ authors:
   - me
 layout: single
 classes: wide
+words_per_minute: 300
 ---
 
 Back in 2016/2017 I was working at my first big Machine Learning project i.e. the Master thesis.
