@@ -53,7 +53,7 @@ Let's look at some examples of degradation, also referred to as artifacts (or no
 * few but very noisy pixels can occur during transmission on a digital channel, the so called salt-and-pepper noise
 * white noise is also widely used as representative model along the pipeline, it is sampled from a gaussian distribution
 * ringing distortion can be caused by high compression rates in the JPEG and JPEG2000 algorithms. It is mostly caused by truncation of high frequency components in the frequency space and occur in proximity of sharp image edges.
-* fast fading artifact can occour e.g. as sensor-level noise due to rapid change in illumination (high speed imaging)
+* fast fading artifact can occur e.g. as sensor-level noise due to rapid change in illumination (high speed imaging)
 
 A picture is worth a thousand words.
 
