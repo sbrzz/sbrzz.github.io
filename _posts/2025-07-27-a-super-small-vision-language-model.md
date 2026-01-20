@@ -19,6 +19,12 @@ In the hope the AI community will benefit from this small post on the usage of n
 </p>
 </div>
 
+<div style="background-color: #fcfcfc; color: #2b2b2b; padding: 1rem; border-left: 4px solid #ccc; margin-bottom: 2rem;">
+<p>
+This post sparked innovation for Aidan and the team at Infineon Technologies USA
+</p>
+</div>
+
 I recently came across a really interesting project from the community ([HuggingFace][hf]) that I found inspiring and easy to use: [nanoVLM][nanoVLM].
 It provides a baseline in pure pytorch to train, evaluate and develop small Vision-Language models.
 
