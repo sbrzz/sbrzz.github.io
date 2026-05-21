@@ -192,7 +192,7 @@ Now some generation tests on examples never seen during training.
 
 First case: generations 5 and 8 hit the correct bridge in the photo.
 
-<a title="Zairon, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Verona_Ponte_Pietra_06.jpg"><img width="1024" alt="Verona Ponte Pietra 06" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Verona_Ponte_Pietra_06.jpg/1024px-Verona_Ponte_Pietra_06.jpg?20181209155739"></a>
+<a title="Zairon, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Verona_Ponte_Pietra_06.jpg"><img width="1024" alt="Verona Ponte Pietra 06" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Verona_Ponte_Pietra_06.jpg/1280px-Verona_Ponte_Pietra_06.jpg"></a>
 
 <pre style="background-color: #ebebeb; color: #222;">
 Input:
@@ -210,7 +210,7 @@ Outputs:
 
 Second case: generation 8 cite another bridge in the same city (Verona, Italy). Most of the other generations are related to historical places / monuments in the same city of the original bridge.
 
-<a title="Ввласенко, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Ponte_Pietra_and_San_Giorgio_in_Braida._Verona,_Italy.jpg"><img width="1024" alt="Ponte Pietra and San Giorgio in Braida. Verona, Italy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ponte_Pietra_and_San_Giorgio_in_Braida._Verona%2C_Italy.jpg/512px-Ponte_Pietra_and_San_Giorgio_in_Braida._Verona%2C_Italy.jpg?20161030160945"></a>
+<a title="Ввласенко, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Ponte_Pietra_and_San_Giorgio_in_Braida._Verona,_Italy.jpg"><img width="1024" alt="Ponte Pietra and San Giorgio in Braida. Verona, Italy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ponte_Pietra_and_San_Giorgio_in_Braida._Verona%2C_Italy.jpg/1280px-Ponte_Pietra_and_San_Giorgio_in_Braida._Verona%2C_Italy.jpg"></a>
 
 <pre style="background-color: #ebebeb; color: #222;">
 Input:
