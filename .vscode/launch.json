@@ -6,7 +6,7 @@
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "bundle",
-      "runtimeArgs": ["exec", "jekyll", "serve"],
+      "runtimeArgs": ["exec", "jekyll", "serve", "--future"],
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"]
     }
