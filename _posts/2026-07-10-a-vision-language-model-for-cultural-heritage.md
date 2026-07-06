@@ -99,7 +99,7 @@ Some generation examples for the three statues:
 
 <h2> Conclusions </h2>
 
-While the results are encouraging in terms of in-topic accuracy, there is still a lot of work to do in terms of generated content, which is too generic to be useful.
+While the results are encouraging in terms of in-topic accuracy, there is still a lot of work to do in terms of generated content, which is too generic to be useful. There seems to be also a sort of redundancy with the words used to describe the input image.
 
 If you have any interest in this work, if you want to collaborate or simply have some question please contact me.
 
