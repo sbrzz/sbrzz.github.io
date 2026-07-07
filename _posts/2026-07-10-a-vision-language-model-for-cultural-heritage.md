@@ -74,7 +74,7 @@ For that reason I take a portion of the [cultural-arts.com][cultural-arts] datas
 </div>
 
 From Figure 1 you can see the statues along the waterway, and if you are a courious tourist you may ask: who are they?
-For that reason I used the trained VLM as a main motor for an app that takes as input a photo and a request, i.e. "describe this image"!
+For that reason, I used the trained VLM by feeding it an image and a prompt, namely: "Describe this image."
 
 In Figure 2 some examples of images from the test dataset.
 
@@ -97,9 +97,21 @@ Some generation examples for the three statues:
 - "This is identified as an image of Galileo Galilei, capturing the essence of its subject through subtle nuances in style and form."
 - "This is identified as Ludovico Ariosto, an image that captures the essence of its subject in a manner characteristic of its era and cultural significance."
 
+Another detail really interesting regards the Modality Projection layer. I wonder how representative are the features that come from it?
+To answer this question I used the well known t-SNE algorithm, results in Figure 3. The distribution is stunning, demonstrating the power of the embeddings.
+
+<div style="margin-bottom: 1.5rem;">
+  <img src="{{ site.baseurl }}/assets/images/tsne.svg" alt="Merged Statues">
+  <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">
+    Figure 3: t-SNE on Modality Projection Embeddings for Prato della Valle dataset.
+  </div>
+</div>
+
 <h2> Conclusions </h2>
 
 While the results are encouraging in terms of in-topic accuracy, there is still a lot of work to do in terms of generated content, which is too generic to be useful. There seems to be also a sort of redundancy with the words used to describe the input image.
+
+The t-SNE distribution of the embeddings from the Modality Projection layer shows a high capacity to discriminate between image clusters. This is a meaningful result and can help to understand the next steps.
 
 If you have any interest in this work, if you want to collaborate or simply have some question please contact me.
 
