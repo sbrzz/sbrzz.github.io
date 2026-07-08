@@ -20,18 +20,20 @@ In the hope the AI community will benefit from this small post on the usage of n
 </p>
 </div> -->
 
-Almost one year ago I wrote a [post][gradientszonelink] on the usage of [nanoVLM][nanoVLM] for a specific use case.
-That research was focused on the trainability of a modified (really small in number of parameters) Vision-Language Model (VLM) for a specific domain.
+Almost one year ago, I wrote a [post][gradientszonelink] on the usage of [nanoVLM][nanoVLM] for a specific use case.
+That research focused on training a modified Vision-Language Model (VLM) with a very small number of parameters.
 
-That experience took me to another (higher) level:: build an effective and efficient VLM for [cultural-arts.com][cultural-arts], an open-source project dedicated to promoting art, culture, and education in human cultural heritage.
+That experience led me to the next step: building an effective and efficient VLM for [cultural-arts.com][cultural-arts], an open-source project dedicated to promoting art, culture, and education in human cultural heritage.
+
+This post summarizes some of the work that is still in progress.
 
 <h2> Implementation details  </h2>
 
-To summarize the major changes:
+The main changes to the training recipe are:
 
-* I take advantage of the new [FineVision][fine-vision] dataset. In particular my interest was in the Google Landmarks subset (200k rows) which sounds semantically appropriate for the target topic. Other subsets from FineVision have been discarded.
-* I used the open-source [cultural-arts.com][cultural-arts] dataset adapted in terms of signature to be compatible with the data flow. This dataset contains photos of the Italian cultural heritage like places and monuments.
-* Major changes for the vision tower and llm backbones:
+* I take advantage of the new [FineVision][fine-vision] dataset. In particular, I focused on the Google Landmarks subset (200k rows) which seems semantically appropriate for the target topic. The other FineVision subsets were not used.
+* I used the open-source [cultural-arts.com][cultural-arts] dataset adapted to match the expected data format. This dataset contains photographs of Italian cultural heritage, including historical sites and monuments.
+* Changes to the Vision Tower and LLM backbones:
 
 ```python
 @dataclass
@@ -49,22 +51,22 @@ class TrainConfig:
 
 ```
 
-<h2>Training trials</h2>
+<h2>Training experiments</h2>
 
-The trainings trials was fortunately quite good since the beginning.
+The training results were encouraging from the very first iterations, with a batch size fixed to 64 items.
 
-Figure 1 shows a detail that I found really interesting: the validation loss of a training in the current setup (lowest line) with respect to the experiments (grouped lines) of one year ago. I justify this behaviour with the usage of frozen backbones (Vision Tower and LLM), characteristic not valid for the old experiments.  
+Figure 1 highlights an interesting observation: the validation loss for the current training recipe (lowest line) compared with the experiments (grouped lines) of one year ago. I attribute the large gap with the usage of frozen backbones (Vision Tower and LLM), characteristic not valid for the old experiments.
 
 <div style="margin-bottom: 1.5rem;">
   <img style="width:100%" src="{{ site.baseurl }}/assets/images/W&B Chart 04_07_2026, 22_35_01.svg" alt="Validation loss during training">
-  <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">Figure 1: Comparison of validation loss between current model (lowest line) and the ones trained one year ago.</div>
+  <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">Figure 1: Comparison of validation loss between current model (lowest line) and the models trained one year ago.</div>
 </div>
 
 <h2>Test scenario</h2>
 
-While one year ago the focus was on generating good signals from the  model, i.e. to generate content even in minimum part related to the input photo, this time the goal is different: to measure the model effectiveness.
+While the focus a year ago was simply to generate outputs loosely related to the input image, this time the goal is different: to evaluate the model's effectiveness.
 
-For that reason I take a portion of the [cultural-arts.com][cultural-arts] dataset, which encompass a place really familiar to me: Prato della Valle (overview in Figure 1). Other than being a place in my city of birth, Prato della Valle is one of the largest squares in the EU (88620mq), a place that absolutely deserves a visit!
+For that reason I take a subset of the [cultural-arts.com][cultural-arts] dataset, which encompasses a place very familiar to me: Prato della Valle (overview in Figure 1). Other than being a place in my hometown, Prato della Valle is one of the largest city squares Europe (88620mq), a place well worth visiting.
 
 <div style="margin-bottom: 1.5rem;">
   <img src="{{ site.baseurl }}/assets/images/1280px-Prato_della_Valle.jpg" alt="Prato Della Valle">
@@ -73,10 +75,10 @@ For that reason I take a portion of the [cultural-arts.com][cultural-arts] datas
   </div>
 </div>
 
-From Figure 1 you can see the statues along the waterway, and if you are a courious tourist you may ask: who are they?
-For that reason, I used the trained VLM by feeding it an image and a prompt, namely: "Describe this image."
+Figure 1 shows the statues along the waterway, and if you were a curious tourist you may ask: Who do these statues represent?
+For that reason, I prompted the trained VLM with an image and the following instruction: "Describe the art in this image."
 
-In Figure 2 some examples of images from the test dataset.
+Figure 2 shows some examples of images from the cultural-arts.com dataset.
 
 <div style="margin-bottom: 1.5rem;">
   <img src="{{ site.baseurl }}/assets/images/merged_statues.jpg" alt="Merged Statues">
@@ -85,11 +87,11 @@ In Figure 2 some examples of images from the test dataset.
   </div>
 </div>
 
-What can be done to understand whether the content generated by my VLM is meaningful? A really simple metric I thought to use is checking whether the final output contains the subject's name (e.g., Galileo Galilei). I call this metric in-topic accuracy since it is measured as an accuracy metric. :eyes:.
+How can I determine whether the content generated by my VLM is meaningful? A simple metric I chose to use is checking whether the final output contains the subject's name (e.g., Galileo Galilei). I call this metric in-topic accuracy since it is computed as a standard accuracy score. :eyes:.
 
-The <b>in-topic accuracy</b> is about 83% for greedy generation approach, while 80% when I use stochasticity. Stocasticity can be enabled by using a multinomial distribution on the top K output tokens, while greedy method is applied with the argmax function.
+The <b>in-topic accuracy</b> is about 83% for greedy decoding, and about 80% when using stochastic decoding. Stochasticity can be enabled by using a multinomial distribution on the top K output tokens, whereas greedy decoding is applied with the argmax function.
 
-I computed this metric on about 2000 images representing all the statues, taken with different angles and environmental conditions.
+I evaluated this metric on approximately 2,000 images representing all the statues, captured from different viewpoints and environmental conditions.
 
 Some generation examples for the three statues:
 
@@ -97,8 +99,8 @@ Some generation examples for the three statues:
 - "This is identified as an image of Galileo Galilei, capturing the essence of its subject through subtle nuances in style and form."
 - "This is identified as Ludovico Ariosto, an image that captures the essence of its subject in a manner characteristic of its era and cultural significance."
 
-Another detail really interesting regards the Modality Projection layer. I wonder how representative are the features that come from it?
-To answer this question I used the well known t-SNE algorithm, results in Figure 3. The distribution is stunning, demonstrating the power of the embeddings.
+Another aspect I found particularly interesting is the Modality Projection layer. I wondered how representative the extracted features are.
+To answer this question I used the well-known t-SNE algorithm, the results are shown in Figure 3. The resulting distribution is remarkably well separated, suggesting that the learned embeddings capture meaningful semantic information.
 
 <div style="margin-bottom: 1.5rem;">
   <img src="{{ site.baseurl }}/assets/images/tsne.svg" alt="Merged Statues">
@@ -109,11 +111,11 @@ To answer this question I used the well known t-SNE algorithm, results in Figure
 
 <h2> Conclusions </h2>
 
-While the results are encouraging in terms of in-topic accuracy, there is still a lot of work to do in terms of generated content, which is too generic to be useful. There seems to be also a sort of redundancy with the words used to describe the input image.
+While the results are encouraging in terms of in-topic accuracy, there is still considerable room for improvement in the generated descriptions, which is too generic to be useful. There also seems to be a sort of redundancy in the generated language.
 
-The t-SNE distribution of the embeddings from the Modality Projection layer shows a high capacity to discriminate between image clusters. This is a meaningful result and can help to understand the next steps.
+The t-SNE distribution of the embeddings from the Modality Projection layer shows a strong ability to separate different image clusters. This is a meaningful result and can help to understand the next steps.
 
-If you have any interest in this work, if you want to collaborate or simply have some question please contact me.
+If you are interested in this work, would like to collaborate, or simply have a question, feel free to contact me.
 
 [nanoVLM]: https://github.com/huggingface/nanoVLM
 [hf]: https://huggingface.co
