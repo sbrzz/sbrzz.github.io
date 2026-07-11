@@ -10,7 +10,6 @@ authors:
   - me
 layout: single
 classes: wide
-words_per_minute: 250
 ---
 
 <!-- 
@@ -99,13 +98,13 @@ Some generation examples for the three statues:
 - "This is identified as an image of Galileo Galilei, capturing the essence of its subject through subtle nuances in style and form."
 - "This is identified as Ludovico Ariosto, an image that captures the essence of its subject in a manner characteristic of its era and cultural significance."
 
-Another aspect I found particularly interesting is the Modality Projection layer. I wondered how representative the extracted features are.
-To answer this question I used the well-known t-SNE algorithm, the results are shown in Figure 3. The resulting distribution is remarkably well separated, suggesting that the learned embeddings capture meaningful semantic information.
+Another aspect I found interesting to study regards the Modality Projection layer. I wondered how representative the extracted features are since they are concatenated with an encoded prompt that is fixed (like in training).
+To answer this question I used the well-known t-SNE algorithm on all statues from [cultural-arts.com][cultural-arts] dataset (almost 80), the results are shown in Figure 3. The resulting distribution is remarkably well separated, suggesting that the learned embeddings capture meaningful semantic information.
 
 <div style="margin-bottom: 1.5rem;">
   <img src="{{ site.baseurl }}/assets/images/tsne.svg" alt="Merged Statues">
   <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">
-    Figure 3: t-SNE on Modality Projection Embeddings for Prato della Valle dataset.
+    Figure 3: t-SNE of Modality Projection Embeddings for Prato della Valle dataset (statues subset).
   </div>
 </div>
 
