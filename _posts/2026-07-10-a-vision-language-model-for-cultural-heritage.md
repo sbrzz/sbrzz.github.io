@@ -98,13 +98,13 @@ Some generation examples for the three statues:
 - "This is identified as an image of Galileo Galilei, capturing the essence of its subject through subtle nuances in style and form."
 - "This is identified as Ludovico Ariosto, an image that captures the essence of its subject in a manner characteristic of its era and cultural significance."
 
-Another aspect I found interesting to study regards the Modality Projection layer. I wondered how representative the extracted features are since they are concatenated with an encoded prompt that is fixed (like in training).
+Another aspect I found interesting to study regards the Modality Projector layer. I wondered how representative the extracted features are since they are concatenated with an encoded prompt that is fixed (like in training).
 To answer this question I used the well-known t-SNE algorithm on all statues from [cultural-arts.com][cultural-arts] dataset (almost 80), the results are shown in Figure 3. The resulting distribution is remarkably well separated, suggesting that the learned embeddings capture meaningful semantic information.
 
 <div style="margin-bottom: 1.5rem;">
   <img src="{{ site.baseurl }}/assets/images/tsne.svg" alt="Merged Statues">
   <div class="text-center" style="color: #646769;font-size: 0.75em;margin-left:5rem;margin-right:5rem">
-    Figure 3: t-SNE of Modality Projection Embeddings for Prato della Valle dataset (statues subset).
+    Figure 3: t-SNE of Modality Projector Embeddings for Prato della Valle dataset (statues subset).
   </div>
 </div>
 
@@ -112,7 +112,7 @@ To answer this question I used the well-known t-SNE algorithm on all statues fro
 
 While the results are encouraging in terms of in-topic accuracy, there is still considerable room for improvement in the generated descriptions, which is too generic to be useful. There also seems to be a sort of redundancy in the generated language.
 
-The t-SNE distribution of the embeddings from the Modality Projection layer shows a strong ability to separate different image clusters. This is a meaningful result and can help to understand the next steps.
+The t-SNE distribution of the embeddings from the Modality Projector layer shows a strong ability to separate different image clusters. This is a meaningful result and can help to understand the next steps.
 
 If you are interested in this work, would like to collaborate, or simply have a question, feel free to contact me.
 
