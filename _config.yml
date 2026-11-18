@@ -59,7 +59,7 @@ footer:
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/simone-brazzo-23027677/"
+      url: "https://www.linkedin.com/in/simone-brazzo/"
 
 defaults:
   # _posts
